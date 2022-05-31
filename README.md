@@ -7,6 +7,7 @@ Playing rock paper scissors vs the computer
 explain the rules
 user selects either rock paper or scissors
 selects using buttons with images
+use flexbox for buttons side by side
 the selection is case insensitive
 avoids this by using buttons but should know how to do
 computer randomly selects rock paper or scissors

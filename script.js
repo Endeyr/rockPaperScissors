@@ -1,46 +1,40 @@
+function playGame() {
+  let userChoice = prompt("Choose fire, water, or grass: ").toLowerCase()
+  let computerChoice = computerPlay()
+  let userScore = 0
+  let computerScore = 0
+  for (let i = 5; i === userScore || i === computerScore; ) {
+    if (
+      userChoice + computerChoice === "fire" + "grass" ||
+      "grass" + "water" ||
+      "water" + "fire"
+    ) {
+      win()
+    } else if (
+      userChoice + computerChoice === "water" + "grass" ||
+      "grass" + "fire" ||
+      "fire" + "water"
+    ) {
+      lose()
+    } else {
+      tie()
+    }
+  }
+}
+// computer random choice
 function computerPlay() {
-  let compValue = Math.floor(Math.random() * 3)
-  if (compValue === 0) {
-    return "rock"
-  } else if (compValue === 1) {
-    return "paper"
-  } else if (compValue === 2) {
-    return "scissors"
-  } else {
-    return "Error"
-  }
+  const fwg = ["fire", "water", "grass"]
+  let randNum = Math.floor(Math.random() * 3)
+  return fwg[randNum]
 }
-
-function playerPlay() {
-  let userValue = prompt("Pick rock, paper, or scissors: ")
-  return userValue.toLowerCase()
+function win() {
+  userScore++
+  console.log("You win")
 }
-
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === computerSelection) {
-    return "tie"
-  } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    return "You win! Scissors beat paper."
-  } else if (playerSelection === "rock" && computerSelection === "paper") {
-    return "You lose. Paper beats rock."
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
-    return "You win! Paper beats rock."
-  } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    return "You lose. Rock beats scissors"
-  } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    return "You win! Rock beats Scissors"
-  } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    return "You lose. Scissors beat paper"
-  } else {
-    return "Error: Choose a correct option"
-  }
+function lose() {
+  computerScore++
+  console.log("You lose")
 }
-const playerSelection = playerPlay()
-const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
-
-// function game() {
-// playRound()
-// for (let i = 0; i < 5; i++) {
-// your code here!
-// }}
+function tie() {
+  console.log("You tie")
+}
