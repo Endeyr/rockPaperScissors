@@ -1,24 +1,29 @@
+let userScore = 0
+let computerScore = 0
 function playGame() {
-  let userChoice = prompt("Choose fire, water, or grass: ").toLowerCase()
-  let computerChoice = computerPlay()
-  let userScore = 0
-  let computerScore = 0
-  for (let i = 5; i === userScore || i === computerScore; ) {
-    if (
-      userChoice + computerChoice === "fire" + "grass" ||
-      "grass" + "water" ||
-      "water" + "fire"
-    ) {
+  while (userScore < 5 && computerScore < 5) {
+    let userChoice = prompt("Choose fire, water, or grass: ").toLowerCase()
+    let computerChoice = computerPlay()
+    if (userChoice + computerChoice === "fire" + "grass") {
       win()
-    } else if (
-      userChoice + computerChoice === "water" + "grass" ||
-      "grass" + "fire" ||
-      "fire" + "water"
-    ) {
+    } else if (userChoice + computerChoice === "grass" + "water") {
+      win()
+    } else if (userChoice + computerChoice === "water" + "fire") {
+      win()
+    } else if (userChoice + computerChoice === "water" + "grass") {
+      lose()
+    } else if (userChoice + computerChoice === "grass" + "fire") {
+      lose()
+    } else if (userChoice + computerChoice === "fire" + "water") {
       lose()
     } else {
       tie()
     }
+  }
+  if (userScore > computerScore) {
+    return "You Win! " + userScore + " : " + computerScore
+  } else if (userScore < computerScore) {
+    return "You lose " + userScore + " : " + computerScore
   }
 }
 // computer random choice
@@ -29,12 +34,12 @@ function computerPlay() {
 }
 function win() {
   userScore++
-  console.log("You win")
+  return "You win " + userScore + " : " + computerScore
 }
 function lose() {
   computerScore++
-  console.log("You lose")
+  return "You lose " + userScore + " : " + computerScore
 }
 function tie() {
-  console.log("You tie")
+  return "You tie " + userScore + " : " + computerScore
 }
