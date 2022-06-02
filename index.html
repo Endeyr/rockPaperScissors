@@ -6,19 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
   <header></header>
   <body>
     <h2>Welcome to My Fire Water Grass Game</h2>
-    <p>
-      <button>Fire</button>
-      <button>Water</button>
-      <button>Grass</button>
-    </p>
+    <div class="buttons">
+      <button class="btn" id="fire" onclick="setFire()">Fire</button>
+      <button class="btn" id="water" onclick="setWater()">Water</button>
+      <button class="btn" id="grass" onclick="setGrass()">Grass</button>
+    </div>
+    <div id="container">
+      <div id="computerSelection"></div>
+      <div class="outcome" id="results"></div>
+      <div class="outcome" id="score"></div>
+      <div class="outcome" id="end"></div>
+      <div class="outcome" id="again"></div>
+    </div>
   </body>
   <footer>
     <p>Aaron Thompson - The Odin Project</p>
     <a target="_blank" href="https://icons8.com">Icons8</a>
   </footer>
+  <script src="script.js"></script>
 </html>
