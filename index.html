@@ -7,16 +7,19 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <header></header>
   <body>
-    <h2>Welcome to My Fire Water Grass Game</h2>
+    <div class="heading">
+      <header>Welcome to My Game</header>
+      <p>Try to beat the computer! First to 5 wins!</p>
+      <h2>Fire > Grass > Water > Fire</h2>
+    </div>
     <div class="buttons">
       <img src="images/fire.png" class="img" id="fire" onclick="setFire()" />
       <img src="images/water.png" class="img" id="water" onclick="setWater()" />
       <img src="images/grass.png" class="img" id="grass" onclick="setGrass()" />
     </div>
-    <div id="container">
-      <div id="computerSelection"></div>
+    <div class="container">
+      <div class="outcome" id="computerSelection"></div>
       <div class="outcome" id="results"></div>
       <div class="outcome" id="score"></div>
       <div class="outcome" id="end"></div>
@@ -24,7 +27,7 @@
     </div>
   </body>
   <footer>
-    <p>Aaron Thompson - The Odin Project</p>
+    <p class="footer">Aaron Thompson - The Odin Project</p>
     <a target="_blank" href="https://icons8.com">Icons8</a>
   </footer>
   <script src="script.js"></script>

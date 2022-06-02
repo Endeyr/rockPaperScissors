@@ -66,6 +66,7 @@ function playRound(userChoice) {
     end.textContent = "You Win! " + userScore + " : " + computerScore
     let pa = document.createElement("button")
     pa.textContent = "Play Again"
+    pa.className = "button"
     pa.id = "pa"
     again.appendChild(pa)
     pa.addEventListener("click", replayGame)
