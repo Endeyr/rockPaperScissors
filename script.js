@@ -5,18 +5,25 @@ function playGame() {
     let userChoice = prompt("Choose fire, water, or grass: ").toLowerCase()
     let computerChoice = computerPlay()
     if (userChoice + computerChoice === "fire" + "grass") {
+      console.log(userChoice, " beats ", computerChoice)
       win()
     } else if (userChoice + computerChoice === "grass" + "water") {
+      console.log(userChoice, " beats ", computerChoice)
       win()
     } else if (userChoice + computerChoice === "water" + "fire") {
+      console.log(userChoice, " beats ", computerChoice)
       win()
     } else if (userChoice + computerChoice === "water" + "grass") {
+      console.log(computerChoice, " beats ", userChoice)
       lose()
     } else if (userChoice + computerChoice === "grass" + "fire") {
+      console.log(computerChoice, " beats ", userChoice)
       lose()
     } else if (userChoice + computerChoice === "fire" + "water") {
+      console.log(computerChoice, " beats ", userChoice)
       lose()
     } else {
+      console.log(computerChoice, " ties ", userChoice)
       tie()
     }
   }
@@ -34,12 +41,12 @@ function computerPlay() {
 }
 function win() {
   userScore++
-  return "You win " + userScore + " : " + computerScore
+  console.log("You win " + userScore + " : " + computerScore)
 }
 function lose() {
   computerScore++
-  return "You lose " + userScore + " : " + computerScore
+  console.log("You lose " + userScore + " : " + computerScore)
 }
 function tie() {
-  return "You tie " + userScore + " : " + computerScore
+  console.log("You tie " + userScore + " : " + computerScore)
 }
